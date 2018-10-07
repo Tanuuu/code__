@@ -94,7 +94,6 @@ ul li {
 input[type="text"], input[type="email"], input[type="password"] {
     font-size: 15px;
     font-weight: 500;
-    text-transform: capitalize;
     letter-spacing: 1px;
     padding: 10px 0;
     box-sizing: border-box;
@@ -105,7 +104,9 @@ input[type="text"], input[type="email"], input[type="password"] {
     background: rgba(255, 255, 255, 0);
     color: #999;
 }
-
+input[type="text"]{
+	 text-transform: capitalize;
+}
 select.form-control ,select.form-contro2,select.form-contro3{
     font-size: 15px;
     font-weight: 500;

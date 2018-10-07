@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>    
+<title>User Account</title>
+<!-- meta_tags-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Job Preferences,Login, Sign up, Login signup, Registration" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+	function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta_tag_Keywords-->
+<!--css_files-->
+	<link rel="stylesheet" href="css/jquery-ui.css"/>
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/><!--stylesheet-->
+	<link rel="stylesheet" href="css/font-awesome.css"><!--font_awesome_icons-->
+	<link href="//fonts.googleapis.com/css?family=PT+Sans+Caption" rel="stylesheet"><!--online_fonts-->
+	<link href="//fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet"><!--online_fonts-->
+<!--//css_files-->
+</head>
+<body>
+<div class="w3l-head">
+<h1>Job Options</h1>
+</div>
+<div class="h3ls-form">
+<form action="home.html" method="post" autocomplete="off">
+		<div class="w3l-last-grid1">
+			<div class="h3l-grid1">	
+				<label class="text">address</label>
+				<div class="w3l-div">
+					<i class="fa fa-chevron-right" aria-hidden="true"></i>
+					<select name="select" id="opt" class="form-control" required="" onclick="submenu()">
+												<?php
+
+												if(isset($_REQUEST["institute"]))
+													echo("<option>" . $_REQUEST["institute"] . "</option>");
+												else
+													echo("<option>Apply for Job</option>");
+
+												?>
+													<option>Select by Department</option>
+													<option>Select by Post</option>
+											</select>
+				</div>
+			</div>
+			<div class="h3l-grid2" id="sub" style="display: none">	
+				<label class="text">First Option</label>
+				<div class="w3l-div" id="menu1">
+				</div>
+				<label class="text">Second Option(Optional)</label>
+				<div class="w3l-div" id="menu2">
+				</div>
+				<label class="text">Third Option(Optional)</label>
+				<div class="w3l-div" id="menu3">
+				</div>
+				<div id="colab">
+				<label class="text">Fourth Option(Optional)</label>
+				<div class="w3l-div" id="menu4">
+				</div>
+				<label class="text">Fifth Option(Optional)</label>
+				<div class="w3l-div" id="menu5">
+				</div>
+				<label class="text">Sixth Option(Optional)</label>
+				<div class="w3l-div" id="menu6">
+				</div>
+			</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+		<div class="w3ls-submit">
+			<input type="submit" value="Next">
+		</div>
+</form>
+<div class="clear"></div>
+		<div class="w3ls-submit">
+			<a href="home.html"><input type="submit" value="Back"></a>
+		</div>
+</div>
+
+
+<!-- Default-JavaScript --> <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+<!-- Calendar -->
+<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function() {
+		$( "#datepicker,#datepicker1" ).datepicker();
+		});
+		function submenu(){
+			var x = document.getElementById("opt").value;
+			if(x != "Apply for Job"){
+				sub.style.display="block";
+			}else if(x == "Apply for Job"){
+				sub.style.display="none";
+			}
+			if(x == "Select by Department"){
+				document.getElementById("menu1").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control' required=''><option>CSE</option><option>IT</option><option>ECE</option><option>EEE</option><option>ICE</option><option>Applied Sciences</option></select>"
+				document.getElementById("menu2").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control'><option>CSE</option><option>IT</option><option>ECE</option><option>EEE</option><option>ICE</option><option>Applied Sciences</option></select>"
+				document.getElementById("menu3").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control'><option>CSE</option><option>IT</option><option>ECE</option><option>EEE</option><option>ICE</option><option>Applied Sciences</option></select>"
+				document.getElementById("menu4").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control'><option>CSE</option><option>IT</option><option>ECE</option><option>EEE</option><option>ICE</option><option>Applied Sciences</option></select>"
+				document.getElementById("menu5").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control'><option>CSE</option><option>IT</option><option>ECE</option><option>EEE</option><option>ICE</option><option>Applied Sciences</option></select>"
+				document.getElementById("menu6").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control'><option>CSE</option><option>IT</option><option>ECE</option><option>EEE</option><option>ICE</option><option>Applied Sciences</option></select>"
+				colab.style.display="block"
+			}
+			else if(x == "Select by Post"){
+				document.getElementById("menu1").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control' required=''><option>Professor</option><option>Associate Professor</option><option>Assistance Professor</option></select>"
+				document.getElementById("menu2").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control' required=''><option>Professor</option><option>Associate Professor</option><option>Assistance Professor</option></select>"
+				document.getElementById("menu3").innerHTML = "<i class='fa fa-chevron-right' aria-hidden='true'></i><select name='dept' class='form-control' required=''><option>Professor</option><option>Associate Professor</option><option>Assistance Professor</option></select>"
+				colab.style.display="none";
+			}
+
+		}
+	</script>
+<!-- //Calendar -->
+</body>
+</html>
